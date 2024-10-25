@@ -1,0 +1,8 @@
+flowchart TD
+    A[Usuario accede a la aplicación SPA] --> B[Usuario escribe texto en el campo de entrada]
+    B --> C[Usuario hace clic en el botón Save]
+    C --> D[La aplicación envía la solicitud al servidor para guardar la nueva nota]
+    D --> E[El servidor procesa la solicitud y guarda la nota]
+    E --> F[El servidor devuelve una respuesta de éxito]
+    F --> G[La aplicación actualiza la interfaz para mostrar la nueva nota]
+    G --> H[Usuario ve la nueva nota en la lista]
