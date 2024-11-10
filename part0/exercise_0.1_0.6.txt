@@ -1,3 +1,4 @@
+/*
 flowchart TD
     A[Usuario accede a la aplicación SPA] --> B[Usuario escribe texto en el campo de entrada]
     B --> C[Usuario hace clic en el botón Save]
@@ -6,3 +7,28 @@ flowchart TD
     E --> F[El servidor devuelve una respuesta de éxito]
     F --> G[La aplicación actualiza la interfaz para mostrar la nueva nota]
     G --> H[Usuario ve la nueva nota en la lista]
+*/
+
+sequenceDiagram
+    participant browser
+    participant server
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
+    activate server
+    server-->>browser: HTML document
+    deactivate server
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+    activate server
+    server-->>browser: CSS file
+    deactivate server
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
+    activate server
+    server-->>browser: JavaScript file
+    deactivate server
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    activate server
+    server-->>browser: JSON data [{"content": "HTML is easy", "date": "2019-05-23"}, ... ]
+    deactivate server
